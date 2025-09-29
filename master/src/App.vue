@@ -1,9 +1,7 @@
 <template>
-  <div>{{ isMoblieTerminal }}</div>
+    <router-view />
 </template>
 
 <script setup>
-import { isMoblieTerminal } from './utils/flexible';
-
 
 </script>
