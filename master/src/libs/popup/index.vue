@@ -9,9 +9,9 @@
                 @click="isVisible = false"></div>
             </transition>
             <!-- 内容 -->
-             <transition name="popup-down-up">
+            <transition name="popup-down-up">
                 <div v-if="isVisible"  v-bind="$attrs" class="w-screen bg-white z-50 fixed bottom-0">
-                    <slot />
+                    <slot></slot>
                 </div>
             </transition>
         </teleport>

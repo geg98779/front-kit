@@ -16,7 +16,7 @@ export const isMobileTerminal = computed(() => {
  */
 
 export const useREM = () => {
-    const MAX_FONT_SIZE = 40
+    const MAX_FONT_SIZE = 40    
     document.addEventListener('DOMContentLoaded', () => {
         const html = document.querySelector('html')
         let fontSize = window.innerWidth / 10
