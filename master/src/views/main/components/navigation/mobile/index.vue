@@ -14,13 +14,16 @@
                 'text-zinc-100': currentCategoryIndex === index
             }">{{ item.name }}</li>
         </ul>
-        <m-popup v-model="isVisible"/>
+        <m-popup v-model="isVisible">
+            <menu-vue :categorys="data" @onItemClick="onItemClick"></menu-vue>
+        </m-popup>
     </div>
 </template>
 
 <script setup>
 import {ref, onBeforeUpdate, watch} from 'vue'
 import { useScroll } from '@vueuse/core'
+import MenuVue from '@/views/main/components/menu/index.vue'
 
 defineProps({
     data: {
@@ -67,6 +70,7 @@ watch(currentCategoryIndex, (val) => {
 // item点击事件
 const onItemClick = (index) => {
     currentCategoryIndex.value = index
+    isVisible.value = false
 }
 
 //控制popup组件
