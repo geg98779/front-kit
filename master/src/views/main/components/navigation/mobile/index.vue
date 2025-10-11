@@ -4,7 +4,8 @@
             <!-- 滑块 -->
             <li ref="sliderTarget" :style="sliderStyle" class="absolute h-[22px] bg-zinc-900 rounded-lg duration-200"></li>
             <!-- 汉堡按钮 -->
-            <li class="fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white z-20 shadow-l-white">
+            <li class="fixed top-0 right-[-1px] h-4 px-1 flex items-center bg-white z-20 
+            shadow-l-white" @click="onShowPopup">
                 <m-icon-svg class="w-1.5 h-1.5" name="hamburger"/>
             </li>
             <li v-for="(item, index) in data" :key="item.id" 
@@ -13,6 +14,7 @@
                 'text-zinc-100': currentCategoryIndex === index
             }">{{ item.name }}</li>
         </ul>
+        <m-popup v-model="isVisible"/>
     </div>
 </template>
 
@@ -65,6 +67,12 @@ watch(currentCategoryIndex, (val) => {
 // item点击事件
 const onItemClick = (index) => {
     currentCategoryIndex.value = index
+}
+
+//控制popup组件
+const isVisible = ref(false)
+const onShowPopup = () => {
+    isVisible.value = true
 }
 </script>
 
