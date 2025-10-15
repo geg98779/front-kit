@@ -1,6 +1,6 @@
 <template>
-    <div>
-        头部
+    <div class="w-full">
+        <m-search></m-search>
     </div>
 </template>
 
