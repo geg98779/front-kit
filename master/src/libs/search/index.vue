@@ -14,10 +14,7 @@
       <!-- 输入框 -->
       <input
         type="text"
-        class="block w-full h-[44px] pl-4 outline-0 duration-500 bg-zinc-100
-         caret-zinc-400 rounded-xl text-zinc-400 tracking-wide
-          text-sm font-semibold border border-zinc-100  focus:border-red-300
-          group-hover:bg-white group-hover:border-zinc-200"
+        class="block w-full h-[44px] pl-4 outline-0 duration-500 bg-zinc-100 caret-zinc-400 rounded-xl text-zinc-400 tracking-wide text-sm font-semibold border border-zinc-100 focus:border-red-300 group-hover:bg-white group-hover:border-zinc-200"
         placeholder="搜索"
         v-model="inputValue"
         @keyup.enter="onSearchHandler"
@@ -26,30 +23,33 @@
       />
       <!-- 删除按钮 -->
       <m-svg-icon
-      v-show="inputValue"
-      name="input-delete" class="h-1.5 w-1.5
-      absolute translate-y-[-50%] top-[50%] right-9
-      cursor-pointer duration-500"
-      @click="onClearClick"></m-svg-icon>
+        v-show="inputValue"
+        name="input-delete"
+        class="h-1.5 w-1.5 absolute translate-y-[-50%] top-[50%] right-9 cursor-pointer duration-500"
+        @click="onClearClick"
+      ></m-svg-icon>
       <!-- 分割线 -->
-      <div class="opacity-0 h-1.5 w-[1px] absolute translate-y-[-50%] top-[50%]
-      right-[62px] duration-500 bg-zinc-300 group-hover:opacity-100"></div>
+      <div
+        class="opacity-0 h-1.5 w-[1px] absolute translate-y-[-50%] top-[50%] right-[62px] duration-500 bg-zinc-300 group-hover:opacity-100"
+      ></div>
       <!-- 搜索按钮（通用组件） -->
-      <m-button class="opacity-0 group-hover:opacity-100 duration-500 absolute translate-y-[-50%]
-       top-[50%] right-1 rounded-full" icon="search" iconColor="#ffffff"
-       @click="onSearchHandler" >
+      <m-button
+        class="opacity-0 group-hover:opacity-100 duration-500 absolute translate-y-[-50%] top-[50%] right-1 rounded-full"
+        icon="search"
+        iconColor="#ffffff"
+        @click="onSearchHandler"
+      >
       </m-button>
     </div>
     <!-- 下拉区 -->
     <transition name="slide">
-        <div
+      <div
         v-if="$slots.dropdown"
         v-show="isFocus"
-        class="max-h-[368px] w-full text-base overflow-auto bg-white
-        absolute z-20 top-[56px] left-0 p-2 rounded border border-zinc-200
-        duration-200 hover:shadow-2xl">
-            <slot name="dropdown" />
-        </div>
+        class="max-h-[368px] w-full text-base overflow-auto bg-white absolute z-20 top-[56px] left-0 p-2 rounded border border-zinc-200 duration-200 hover:shadow-2xl"
+      >
+        <slot name="dropdown" />
+      </div>
     </transition>
   </div>
 </template>
@@ -86,7 +86,7 @@ const slots = useSlots()
 const props = defineProps({
   modelValue: {
     required: true,
-    type: String,
+    type: String
   }
 })
 
