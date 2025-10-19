@@ -5,26 +5,32 @@
       <slot name="reference" />
     </div>
     <!-- 气泡展示 -->
-    <transiton>
+    <transition>
       <div
         v-show="isVisible"
         class="absolute p-1 z-20 bg-white border rounded-md"
       >
         <!-- 匿名插槽：用于展示弹出层的内容 -->
-        <slot />
+        <slot></slot>
       </div>
-    </transiton>
+    </transition>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 
 const isVisible = ref(false)
 
-const onMouseenter = () => {}
+const onMouseenter = () => {
+  isVisible.value = true
+  console.log('aklsdjfkaj')
+}
 
-const onMouseleave = () => {}
+const onMouseleave = () => {
+  isVisible.value = false
+  console.log('leave')
+}
 </script>
 
 <style lang="scss" scoped>
