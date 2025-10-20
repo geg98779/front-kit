@@ -1,4 +1,4 @@
-<template> 
+<template>
     <navigation-vue></navigation-vue>
 </template>
 
