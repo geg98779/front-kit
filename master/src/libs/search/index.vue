@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group relative p-0.5 rounded-xl border-white duration-500 hover:bg-red-100/40"
+    class="group relative p-0.5 rounded-xl border-white dark:border-zinc-200 duration-500 hover:bg-red-100/40"
     ref="containerTarget"
   >
     <!-- search部分 -->
@@ -14,7 +14,7 @@
       <!-- 输入框 -->
       <input
         type="text"
-        class="block w-full h-[44px] pl-4 outline-0 duration-500 bg-zinc-100 caret-zinc-400 rounded-xl text-zinc-400 tracking-wide text-sm font-semibold border border-zinc-100 focus:border-red-300 group-hover:bg-white group-hover:border-zinc-200"
+        class="block w-full h-[44px] pl-4 outline-0 duration-500 bg-zinc-100 dark:bg-zinc-800 caret-zinc-400 rounded-xl text-zinc-900 dark:text-zinc-200 tracking-wide text-sm font-semibold border border-zinc-100 dark:border-zinc-700 focus:border-red-300 group-hover:bg-white dark:group-hover:bg-zinc-900 group-hover:border-zinc-200 dark:group-hover:border-zinc-700"
         placeholder="搜索"
         v-model="inputValue"
         @keyup.enter="onSearchHandler"
@@ -46,7 +46,7 @@
       <div
         v-if="$slots.dropdown"
         v-show="isFocus"
-        class="max-h-[368px] w-full text-base overflow-auto bg-white absolute z-20 top-[56px] left-0 p-2 rounded border border-zinc-200 duration-200 hover:shadow-2xl"
+        class="max-h-[368px] w-full text-base overflow-auto bg-white dark:bg-zinc-800 absolute z-20 top-[56px] left-0 p-2 rounded border border-zinc-200 dark:border-zinc-600 duration-200 hover:shadow-2xl"
       >
         <slot name="dropdown" />
       </div>

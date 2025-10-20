@@ -1,15 +1,21 @@
 <template>
-    <div class="w-full bg-white border-b border-zinc-200 px-2 py-1">
-        <div class="flex items-center">
-            <img 
-            v-lazy
-            class="h-4 cursor-pointer mr-2" src="@/assets/vue.svg" 
-            @click="onToHome">      
-            <header-search-vue class="mr-1"></header-search-vue>
-            <header-theme-vue class="mr-1"></header-theme-vue>
-            <header-my-vue></header-my-vue>
-        </div>
+  <div
+    class="w-full bg-white dark:bg-zinc-800 border-b
+    border-zinc-200 dark:border-b-zinc-700
+    px-2 py-1"
+  >
+    <div class="flex items-center">
+      <img
+        v-lazy
+        class="h-4 cursor-pointer mr-2"
+        src="@/assets/vue.svg"
+        @click="onToHome"
+      />
+      <header-search-vue class="mr-1"></header-search-vue>
+      <header-theme-vue class="mr-1"></header-theme-vue>
+      <header-my-vue></header-my-vue>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -26,5 +32,4 @@ const onToHome = () => {
 </script>
 
 <style lang="scss" scoped>
-    
 </style>

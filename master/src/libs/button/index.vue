@@ -1,36 +1,38 @@
 <template>
-    <button class="text-sm text-center rounded duration-150 flex justify-center items-center"
-            :class="[ typeEnum[type],
-                    sizeEnum[sizeKey].button,
-                    { 'active:scale-105': isActiveAnim }
-            ]"
-            @click.stop="onBtnClick"
-    >
-        <!-- loading -->
-        <m-svg-icon v-if="loading" name="loading"
-        class="w-2 h-2 animate-spin mr-1">
-        </m-svg-icon>
-        <!-- icon按钮 -->
-        <m-svg-icon
-        v-if="icon"
-        :name="icon"
-        class="m-auto"
-        :class="sizeEnum[sizeKey].icon"
-        :color="iconColor"
-        :fillClass="iconClass"
-        ></m-svg-icon>
-        <!-- 文字按钮 -->
-        <slot v-else></slot>
-    </button>
+  <button
+    class="text-sm text-center rounded duration-150 flex justify-center items-center"
+    :class="[
+      typeEnum[type],
+      sizeEnum[sizeKey].button,
+      { 'active:scale-105': isActiveAnim }
+    ]"
+    @click.stop="onBtnClick"
+  >
+    <!-- loading -->
+    <m-svg-icon v-if="loading" name="loading" class="w-2 h-2 animate-spin mr-1">
+    </m-svg-icon>
+    <!-- icon按钮 -->
+    <m-svg-icon
+      v-if="icon"
+      :name="icon"
+      class="m-auto"
+      :class="sizeEnum[sizeKey].icon"
+      :color="iconColor"
+      :fillClass="iconClass"
+    ></m-svg-icon>
+    <!-- 文字按钮 -->
+    <slot v-else></slot>
+  </button>
 </template>
 
 <script>
-    //type 可选项: 表示按钮风格
-    //size 可选项: 表示按钮大小 需区分文字按钮和大小按钮
+//type 可选项: 表示按钮风格
+//size 可选项: 表示按钮大小 需区分文字按钮和大小按钮
 const typeEnum = {
-  primary:'text-white bg-zinc-800 hover:bg-zinc-900  active:bg-zinc-800',
-  main: 'text-white bg-main  hover:bg-hover-main  active:bg-main',
-  info: 'text-zinc-800 bg-zinc-200  hover:bg-zinc-300  active:bg-zinc-200'
+  primary:
+    'text-white bg-zinc-800 dark:bg-zinc-900 hover:bg-zinc-900 dark:hover:bg-zinc-700 active:bg-zinc-800 dark:active:bg-zinc-700',
+  main: 'text-white bg-main dark:bg-zinc-900 hover:bg-hover-main dark:hover:bg-zinc-700 active:main dark:active:bg-zinc-700',
+  info: 'text-zinc-800 dark:text-zinc-300 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 active:bg-zinc-200 dark:active:bg-zinc-700'
 }
 
 const sizeEnum = {
@@ -63,7 +65,7 @@ const EMITS_CLICK = 'click'
  * 4. 依据当前的数据实现视图
  * 5. 处理点击事件
  */
-import {computed} from 'vue'
+import { computed } from 'vue'
 const props = defineProps({
   // icon 图标
   icon: String,
@@ -123,7 +125,7 @@ const sizeKey = computed(() => {
 const emits = defineEmits([EMITS_CLICK])
 
 const onBtnClick = () => {
-  if(props.loading){
+  if (props.loading) {
     return
   }
   emits(EMITS_CLICK)
@@ -131,5 +133,4 @@ const onBtnClick = () => {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
